@@ -53,10 +53,9 @@ const UploadForm = ({uploadBtnClick, progress}) => {
       </div>
       {errorMsg && <AlertMsg msg={errorMsg}/>}
       {file && <FilePreview file={file} removeFile={() => setFile(null)}/> }
-      {progress> 0 ?<ProgressBar progress={progress}/> : null }
-      <button disabled={!file} className="disabled:bg-gray-500 p-2 bg-primary text-white w-[30%] rounded-full mt-5" onClick={() => uploadBtnClick(file)}>
+      {progress> 0 ?<ProgressBar progress={progress}/> : <button disabled={!file} className="disabled:bg-gray-500 p-2 bg-primary text-white w-[30%] rounded-full mt-5" onClick={() => uploadBtnClick(file)}>
         Upload
-      </button>
+      </button> }
     </div>
   );
 };
